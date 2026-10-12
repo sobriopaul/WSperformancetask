@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1>Student Registration</h1>
+        </header>
+
+        <form id="registrationForm" novalidate>
+            <div class="section-title">Personal Information</div>
+
+            <div class="form-grid">
+                <div class="field">
+                    <label for="studentId">Student ID</label>
+                    <input id="studentId" name="studentId"
+                           placeholder="e.g. 2026-001"
+                           data-validate="required"
+                           data-error="Please enter your Student ID"
+                           required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="field">
+                    <label for="fullName">Full Name</label>
+                    <input id="fullName" name="fullName"
+                           placeholder="Enter your full name"
+                           data-validate="required"
+                           data-error="Please enter your full name."
+                           required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email Address</label>
+                    <input id="email" name="email" type="email"
+                           placeholder="you@example.com"
+                           data-validate="email"
+                           data-error="Enter a valid email address."
+                           required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="field">
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" name="phone" type="tel"
+                           placeholder="09XXXXXXXXX"
+                           data-validate="phone"
+                           data-error="Use 09XXXXXXXXX or +639XXXXXXXXX."
+                           maxlength="13" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="field">
+                    <label for="dob">Date of Birth</label>
+                    <input id="dob" name="dob" type="date"
+                           data-validate="required"
+                           data-error="Please select your date of birth."
+                           required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="field">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender"
+                            data-validate="required"
+                            data-error="Please select your gender."
+                            required>
+                        <option value="">Select gender</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                       
+                    </select>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="field">
+                    <label for="program">Program / Strand</label>
+                    <select id="program" name="program"
+                            data-validate="required"
+                            data-error="Please select a program."
+                            required>
+                        <option value="">Select program</option>
+                        <option value="BSIT">BSIT</option>
+                        <option value="HM">HM</option>
+                        <option value="CRIM">CRIM</option>
+                        <option value="COE">COE</option>
+                        <option value="CON">CON</option>
+                       
+                    </select>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="field">
+                    <label for="yearLevel">Year Level</label>
+                    <select id="yearLevel" name="yearLevel"
+                            data-validate="required"
+                            data-error="Please select your year level."
+                            required>
+                        <option value="">Select year level</option>
+                        <option value="BSIT-1">BSIT-1</option>
+                        <option value="BSIT-2">BSIT-2</option>
+                        <option value="BSIT-3">BSIT-3</option>
+                        <option value="BSIT-4">BSIT-4</option>
+                    </select>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="field full-width">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="3"
+                              placeholder="Enter your address"
+                              data-validate="required"
+                              data-error="Please enter your address."
+                              required></textarea>
+                    <small class="error-message"></small>
+                </div>
+            </div>
+
+           
+
+            <div class="form-grid">
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password"
+                           placeholder="At least 8 characters"
+                           data-validate="password"
+                           data-error="Password must be at least 8 characters."
+                           minlength="8" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="field">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input id="confirmPassword" name="confirmPassword"
+                           type="password" placeholder="Confirm your password"
+                           data-validate="confirm"
+                           data-error="Passwords do not match."
+                           required>
+                    <small class="error-message"></small>
+                </div>
+            </div>
+
+            <button type="button" id="togglePassword"
+                    class="text-button" aria-pressed="false">
+                Show passwords
+            </button>
+
+            <div class="agreement">
+                <input type="checkbox" id="agreement" name="agreement"
+                       data-validate="agreement"
+                       data-error="You must agree before registering."
+                       required>
+                <label for="agreement">
+                    please confirm if the information you provided is correct
+                </label>
+            </div>
+            <small id="agreementError" class="error-message"></small>
+
+            <div id="successMessage" class="success-message"
+                 role="status" aria-live="polite" hidden>
+                Registration successful! Your form has been validated.
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="submit-button">
+                    Register Now
+                </button>
+                <button type="reset" class="reset-button">
+                    Reset Form
+                </button>
+            </div>
+
+            <p class="footer">STUDENT REGISTRATION PORTAL</p>
+        </form>
+    </main>
+</body>
+</html>

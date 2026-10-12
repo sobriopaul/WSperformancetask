@@ -1,0 +1,272 @@
+:root {
+  --bg-dark: #0f172a;
+  --bg-mid: #1e293b;
+  --panel: rgba(15, 23, 42, 0.75);
+  --panel-soft: rgba(15, 23, 42, 0.55);
+  --card: #f8fafc;
+  --input-bg: #ffffff;
+  --line: #dbe2ea;
+  --text: #1f2937;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-strong: #1d4ed8;
+  --accent: #38bdf8;
+  --success: #16a34a;
+  --success-bg: #dcfce7;
+  --danger: #dc2626;
+  --danger-bg: #fee2e2;
+  --shadow: 0 20px 45px rgba(15, 23, 42, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.24), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.26), transparent 32%),
+    linear-gradient(135deg, var(--bg-dark), var(--bg-mid));
+  color: var(--text);
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 40px auto;
+  padding: 30px 24px 26px;
+}
+
+.header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 6px 20px rgba(14, 116, 144, 0.35);
+}
+
+#registrationForm {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(7px);
+}
+
+.section-title {
+  margin-bottom: 18px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid rgba(37, 99, 235, 0.15);
+  padding-bottom: 10px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 20px;
+  margin-bottom: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field.full-width {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--input-bg);
+  color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+input.error,
+select.error,
+textarea.error {
+  border-color: var(--danger);
+  background: #fff7f7;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.08);
+}
+
+.error-message {
+  min-height: 18px;
+  font-size: 0.8rem;
+  color: var(--danger);
+  line-height: 1.4;
+}
+
+.agreement {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 20px 0 8px;
+  padding: 8px 4px;
+}
+
+.agreement input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary);
+  margin-top: 2px;
+}
+
+.agreement label {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+#agreementError {
+  margin-top: 0;
+}
+
+.success-message {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--success-bg);
+  color: #166534;
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  font-weight: 700;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.submit-button {
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #fff;
+  padding: 15px 26px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
+}
+
+.reset-button {
+  background: #e2e8f0;
+  color: var(--text);
+  padding: 15px 22px;
+  font-weight: 700;
+}
+
+.text-button {
+  background: transparent;
+  color: var(--primary-strong);
+  padding: 0;
+  margin: 8px 0 12px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.text-button.active {
+  color: var(--accent);
+}
+
+.footer {
+  margin: 26px 0 0;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: min(94%, 100%);
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  #registrationForm {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .submit-button,
+  .reset-button {
+    width: 100%;
+  }
+}
